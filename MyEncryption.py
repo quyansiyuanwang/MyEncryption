@@ -75,9 +75,9 @@ d = MyEncryption.decode(res)
 print(d)
 # ----------Others Example-------------
 print('-'*50)
-m = 'zhanghao520'
+m = '114514'
 MyEncryption.re_decode = True
-MyEncryption.encode_key = 'uldrrrrdul'
+MyEncryption.encode_key = 'uldrrdul'
 
 res = MyEncryption.encode(m)
 print(res)
@@ -85,14 +85,4 @@ print(res)
 d = MyEncryption.decode(res)
 print(d)
 MyEncryption.reset()
-# ----------Others Example-------------
-print('-'*50)
-m = 'qxylovequyansinanwang520'
-MyEncryption.re_decode = True
-MyEncryption.encode_key = 'uldddddddddldr'
-res = MyEncryption.encode(m)
-print(res)
-
-d = MyEncryption.decode(res)
-print(d)
 
