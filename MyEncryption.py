@@ -16,7 +16,7 @@ class MyEncryption:
         return de_keys
         
     @classmethod
-    def __disorganize(cls, pre_list, keys, idx=0):
+    def __disorganize(cls, pre_list, keys):
         special_key = {
             'u':{2:12,3:20,4:28,8:4,9:11,10:19,11:27,12:33,16:3,17:10,18:18,19:26,20:32,24:2,25:9,26:17,27:25,28:31,31:8,32:16,33:24},
             'l':{0:9,1:17,2:25,5:2,6:8,7:16,8:24,9:31,13:1,14:7,15:15,16:23,17:30,21:0,22:6,23:14,24:22,25:29,29:5,30:13,31:21}
@@ -61,7 +61,7 @@ class MyEncryption:
         turning = []
         for i in asc:
             turning.append(cls.__disorganize(list(i), MyEncryption.decodeKeyGenerate(MyEncryption.encode_key) if MyEncryption.re_decode else MyEncryption.encode_key))
-        asc = ''.join(map(lambda x: ''.join(x),turning))
+        asc = ''.join(map(''.join, turning))
         idx = asc.find('1')
         asc = asc[idx - (idx - len(asc)) % 8:]
         return ''.join(chr(int(asc[i : i + 8], 2)) for i in range(0, len(asc), 8))
@@ -75,9 +75,9 @@ d = MyEncryption.decode(res)
 print(d)
 # ----------Others Example-------------
 print('-'*50)
-m = '6'
+m = 'zhanghao520'
 MyEncryption.re_decode = True
-MyEncryption.encode_key = 'l'
+MyEncryption.encode_key = 'uldrrrrdul'
 
 res = MyEncryption.encode(m)
 print(res)
@@ -87,10 +87,12 @@ print(d)
 MyEncryption.reset()
 # ----------Others Example-------------
 print('-'*50)
-m = 'throw new Error("Error")'
-
+m = 'qxylovequyansinanwang520'
+MyEncryption.re_decode = True
+MyEncryption.encode_key = 'uldddddddddldr'
 res = MyEncryption.encode(m)
 print(res)
 
 d = MyEncryption.decode(res)
 print(d)
+
